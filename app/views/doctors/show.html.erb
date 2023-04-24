@@ -5,5 +5,7 @@
 
 <h3>Doctor's Patients:</h3>
   <% @doctor.doc_patients.each do |patient| %>
-  <p><%= patient.name %><p>
-<% end %>
+  <div id="doc_patients_<%= patient.id %>">
+    <p><%= patient.name %><p>
+    <% end %>
+  </div>
