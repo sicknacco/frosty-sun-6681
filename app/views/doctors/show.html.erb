@@ -4,5 +4,6 @@
 <p>Hospital: <%= @doctor.hospital.name %></p>
 
 <h3>Doctor's Patients:</h3>
-  
-<p><%= @doctor.doc_patients %><p>
+  <% @doctor.doc_patients.each do |patient| %>
+  <p><%= patient.name %><p>
+<% end %>
