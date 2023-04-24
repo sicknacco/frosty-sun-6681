@@ -8,7 +8,7 @@
   Hospital.destroy_all
   Doctor.destroy_all
   Patient.destroy_all
-  PatientDoctor.destroy_all
+  DoctorPatient.destroy_all
 
   @hospital = Hospital.create!(name: "That Big One")
 
@@ -20,6 +20,6 @@
   @patient3 = Patient.create!(name: "John Johnson", age: 21)
   @patient4 = Patient.create!(name: "No Show", age: 11)
 
-  PatientDoctor.create!(patient: @patient1, doctor: @doc1)
-  PatientDoctor.create!(patient: @patient2, doctor: @doc1)
-  PatientDoctor.create!(patient: @patient3, doctor: @doc1)
+  DoctorPatient.create!(patient: @patient1, doctor: @doc1)
+  DoctorPatient.create!(patient: @patient2, doctor: @doc1)
+  DoctorPatient.create!(patient: @patient3, doctor: @doc1)
