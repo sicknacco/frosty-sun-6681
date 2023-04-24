@@ -7,8 +7,8 @@ RSpec.describe " '/doctors/:id' Doctor Show Page", type: :feature do
 
   describe "When I visit a doctor's show page I see all of that doctor's information" do
     it 'shows doc name, specialty, university, hospital name, and patients names' do
-      visit "/doctors/#{@doc1}"
-
+      visit doctor_path(@doc1)
+save_and_open_page
       expect(page).to have_content("Dr. Faber")
       expect(page).to have_content("Rheumatology")
       expect(page).to have_content("U.O.I.")

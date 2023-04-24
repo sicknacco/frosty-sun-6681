@@ -2,6 +2,7 @@ def test_data
   @hospital = Hospital.create!(name: "That Big One")
 
   @doc1 = @hospital.doctors.create!(name: "Dr. Faber", specialty: "Rheumatology", university: "U.O.I.")
+  @doc2 = @hospital.doctors.create!(name: "New Guy", specialty: "Weird Stuff", university: "B.F.E.")
 
   @patient1 = Patient.create!(name: "Jim Jimson", age: 56)
   @patient2 = Patient.create!(name: "Tim Timerson", age: 83)
