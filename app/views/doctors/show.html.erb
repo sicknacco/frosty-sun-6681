@@ -7,5 +7,9 @@
   <% @doctor.doc_patients.each do |patient| %>
   <div id="doc_patients_<%= patient.id %>">
     <p><%= patient.name %><p>
+    <p><%= form_with url: doctor_patient_path, method: :delete, local: true do |form| %>
+    <%= form.submit "Delete #{patient.name}" %>
+    <%= form.hidden_field :patient, value: patient.id %>
     <% end %>
+  <% end %>
   </div>

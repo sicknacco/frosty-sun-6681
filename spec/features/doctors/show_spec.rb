@@ -22,12 +22,18 @@ RSpec.describe " '/doctors/:id' Doctor Show Page", type: :feature do
     
     it 'has a button next to patient names to remove patient' do
       visit doctor_path(@doc1)
-      
-      within "#doc_patients_#{@patient1}" do
-      expect(page).to have_button("Delete Patient")
-      click_button("Delete Patient")
-      expect(current_path).to eq(doctor_path(@doc1))
+
+      within "#doc_patients_#{@patient1.id}" do
+        expect(page).to have_button("Delete #{@patient1.name}")
+
+        click_button("Delete #{@patient1.name}")
       end
+
+      expect(current_path).to eq(doctor_path(@doc1))
+      expect(page).to_not have_content(@patient1.name)
+
+      visit doctor_path(@doc2)
+      expect(page).to have_content(@patient1.name)
     end
   end
 end

@@ -9,9 +9,11 @@ def test_data
   @patient3 = Patient.create!(name: "John Johnson", age: 21)
   @patient4 = Patient.create!(name: "No Show", age: 11)
 
-  PatientDoctor.create!(patient: @patient1, doctor: @doc1)
-  PatientDoctor.create!(patient: @patient2, doctor: @doc1)
-  PatientDoctor.create!(patient: @patient3, doctor: @doc1)
+  DoctorPatient.create!(patient: @patient1, doctor: @doc1)
+  DoctorPatient.create!(patient: @patient2, doctor: @doc1)
+  DoctorPatient.create!(patient: @patient3, doctor: @doc1)
+  
+  DoctorPatient.create!(patient: @patient1, doctor: @doc2)
 end
 
 
