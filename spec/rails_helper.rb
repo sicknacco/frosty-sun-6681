@@ -1,3 +1,19 @@
+def test_data
+  @hospital = Hospital.create!(name: "That Big One")
+
+  @doc1 = @hospital.doctors.create!(name: "Dr. Faber", specialty: "Rheumatology", university: "UOI")
+
+  @patient1 = Patient.create!(name: "Jim Jimson", age: 56)
+  @patient2 = Patient.create!(name: "Tim Timerson", age: 83)
+  @patient3 = Patient.create!(name: "John Johnson", age: 21)
+  @patient4 = Patient.create!(name: "No Show", age: 11)
+
+  PatientDoctor.create!(patient: @patient1, doctor: @doc1)
+  PatientDoctor.create!(patient: @patient2, doctor: @doc1)
+  PatientDoctor.create!(patient: @patient3, doctor: @doc1)
+end
+
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
